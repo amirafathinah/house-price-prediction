@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prediksi Harga Rumah Depok</title>
+  
+  <!-- Font Google: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="background-decor"></div>
+
+  <main class="container">
+    <header class="header">
+      <div class="badge">AI Real Estate Estimator</div>
+      <h1>🏡 Prediksi Harga Rumah</h1>
+      <p>Dapatkan estimasi harga rumah presisi berdasarkan spesifikasi & lokasi di Depok.</p>
+    </header>
+
+    <form id="prediction-form">
+      <div class="form-grid">
+        
+        <div class="form-group">
+          <label for="kamar-tidur">
+            <span>Kamar Tidur</span>
+            <span class="icon">🛏️</span>
+          </label>
+          <input id="kamar-tidur" name="Kamar Tidur" type="number"
+            min="1" max="20" step="1"
+            placeholder="Contoh: 3" required>
+          <small>Masukkan 1–20 kamar</small>
+        </div>
+
+        <div class="form-group">
+          <label for="kamar-mandi">
+            <span>Kamar Mandi</span>
+            <span class="icon">🚿</span>
+          </label>
+          <input id="kamar-mandi" name="Kamar Mandi" type="number"
+            min="1" max="20" step="1"
+            placeholder="Contoh: 2" required>
+          <small>Masukkan 1–20 kamar mandi</small>
+        </div>
+
+        <div class="form-group">
+          <label for="garasi">
+            <span>Garasi</span>
+            <span class="icon">🚗</span>
+          </label>
+          <input id="garasi" name="Garasi" type="number"
+            min="0" max="10" step="1"
+            placeholder="Contoh: 1" required>
+          <small>Isi 0 jika tidak ada garasi</small>
+        </div>
+
+        <div class="form-group">
+          <label for="kecamatan">
+            <span>Kecamatan di Depok</span>
+            <span class="icon">📍</span>
+          </label>
+          <div class="select-wrapper">
+            <select id="kecamatan" name="Kecamatan" required>
+              <option value="">Pilih kecamatan...</option>
+              <option value="Beji">Beji</option>
+              <option value="Bojongsari">Bojongsari</option>
+              <option value="Cilodong">Cilodong</option>
+              <option value="Cimanggis">Cimanggis</option>
+              <option value="Cinere">Cinere</option>
+              <option value="Cipayung">Cipayung</option>
+              <option value="Limo">Limo</option>
+              <option value="Pancoran Mas">Pancoran Mas</option>
+              <option value="Sawangan">Sawangan</option>
+              <option value="Sukmajaya">Sukmajaya</option>
+              <option value="Tapos">Tapos</option>
+            </select>
+          </div>
+          <small>Lokasi kecamatan rumah</small>
+        </div>
+
+        <div class="form-group">
+          <label for="luas-tanah">
+            <span>Luas Tanah (m²)</span>
+            <span class="icon">📐</span>
+          </label>
+          <input id="luas-tanah" name="Luas Tanah" type="number"
+            min="1" max="10000" step="any"
+            placeholder="Contoh: 100" required>
+          <small>Panduan: 20–2.000 m²</small>
+        </div>
+
+        <div class="form-group">
+          <label for="luas-bangunan">
+            <span>Luas Bangunan (m²)</span>
+            <span class="icon">🏗️</span>
+          </label>
+          <input id="luas-bangunan" name="Luas Bangunan" type="number"
+            min="1" max="10000" step="any"
+            placeholder="Contoh: 80" required>
+          <small>Panduan: 20–2.000 m²</small>
+        </div>
+
+      </div>
+
+      <button type="submit" class="btn-submit">
+        <span>Hitung Estimasi Harga</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+      </button>
+    </form>
+
+    <div id="status" role="status"></div>
+
+    <section id="result" hidden>
+      <div class="result-header">
+        <span class="result-badge">Estimasi ML</span>
+        <h2>Hasil Prediksi Harga</h2>
+      </div>
+      <div class="price-container">
+        <p id="price">Rp 0</p>
+      </div>
+      <p class="disclaimer">
+        ℹ️ Catatan: Nilai di atas merupakan estimasi berdasarkan model Machine Learning, bukan appraisal harga pasar resmi.
+      </p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
